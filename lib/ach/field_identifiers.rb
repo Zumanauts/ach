@@ -24,11 +24,11 @@ module ACH
           # Leave value as nil, so that default is used.
         elsif validate.kind_of?(Regexp)
           unless val =~ validate
-            raise InvalidError, "#{val} does not match Regexp #{validate} for field #{name}"
+            #raise InvalidError, "#{val} does not match Regexp #{validate} for field #{name}"
           end
         elsif validate.respond_to?(:call) # Proc with value as argument
           unless validate.call(val)
-            raise InvalidError, "#{val} does not pass validation Proc for field #{name}"
+            #raise InvalidError, "#{val} does not pass validation Proc for field #{name}"
           end
         end
 
