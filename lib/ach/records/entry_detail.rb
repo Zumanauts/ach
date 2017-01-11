@@ -82,7 +82,7 @@ module ACH::Records
     field :addenda_record_indicator, Integer,
         lambda { |f| sprintf('%01d', f)}
     field :originating_dfi_identification, String,
-        nil, nil, /\A\d{8}\z/
+        nil, nil #, /\A\d{8}\z/
     field :trace_number, Integer, lambda { |f| sprintf('%07d', f)}
   end
 end
